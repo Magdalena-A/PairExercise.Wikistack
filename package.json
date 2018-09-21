@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Magdalena-A/PairExercise.Wikistack#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "html-template-tag": "^2.0.0",
     "morgan": "^1.9.1"
   }
 }

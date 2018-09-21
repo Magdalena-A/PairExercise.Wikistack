@@ -18,7 +18,6 @@ router.post('/', async (req, res, next) => {
     title: req.body.title,
     content: req.body.content,
   });
-
   // make sure we only redirect *after* our save is complete!
   // note: `.save` returns a promise.
   try {
@@ -28,4 +27,12 @@ router.post('/', async (req, res, next) => {
   } catch (error) { next(error) }
 });
 
-module.exports = router; 
+router.get('/:slug', async (req, res) => {
+  const currentPage = await Page.findOne({
+    where: {slug: req.params.slug}
+  })
+  console.log(currentPage);
+  res.json(currentPage);
+});
+
+module.exports = router;
